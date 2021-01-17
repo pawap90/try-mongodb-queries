@@ -39,16 +39,16 @@ describe('push operator', () => {
     it('can push a single donut to the end of the array', async () => {
         await seeder.run(db);
 
-        const initialDonutCombo = await donutCombosCollection.findOne({ name: "No Choco" });
+        const initialDonutCombo = await donutCombosCollection.findOne({ name: 'No Choco' });
 
-        const pinkDonut = { color: "pink", glazing: true };
-        await donutCombosCollection.updateOne({ name: "No Choco" }, {
+        const pinkDonut = { color: 'pink', glazing: true };
+        await donutCombosCollection.updateOne({ name: 'No Choco' }, {
             $push: {
                 donuts: pinkDonut
             }
         });
 
-        const modifiedDonutCombo = await donutCombosCollection.findOne({ name: "No Choco" });
+        const modifiedDonutCombo = await donutCombosCollection.findOne({ name: 'No Choco' });
 
         expect(modifiedDonutCombo.donuts.length).toBe(4);
         expect(modifiedDonutCombo.donuts[3]).toStrictEqual(pinkDonut);
@@ -59,10 +59,10 @@ describe('push operator', () => {
     it('can push a single donut into a specific position', async () => {
         await seeder.run(db);
 
-        const initialDonutCombo = await donutCombosCollection.findOne({ name: "No Choco" });
+        const initialDonutCombo = await donutCombosCollection.findOne({ name: 'No Choco' });
 
-        const pinkDonut = { color: "pink", glazing: true };
-        await donutCombosCollection.updateOne({ name: "No Choco" }, {
+        const pinkDonut = { color: 'pink', glazing: true };
+        await donutCombosCollection.updateOne({ name: 'No Choco' }, {
             $push: {
                 donuts: {
                     $position: 2,
@@ -71,7 +71,7 @@ describe('push operator', () => {
             }
         });
 
-        const modifiedDonutCombo = await donutCombosCollection.findOne({ name: "No Choco" });
+        const modifiedDonutCombo = await donutCombosCollection.findOne({ name: 'No Choco' });
 
         expect(modifiedDonutCombo.donuts.length).toBe(4);
         expect(modifiedDonutCombo.donuts[2]).toStrictEqual(pinkDonut);
@@ -82,11 +82,11 @@ describe('push operator', () => {
     it('can push multiple donuts', async () => {
         await seeder.run(db);
 
-        const initialDonutCombo = await donutCombosCollection.findOne({ name: "B&W" });
+        const initialDonutCombo = await donutCombosCollection.findOne({ name: 'B&W' });
 
-        const whiteDonut = { color: "white", glazing: true };
-        const pinkDonut = { color: "pink", glazing: true };
-        await donutCombosCollection.updateOne({ name: "B&W" }, {
+        const whiteDonut = { color: 'white', glazing: true };
+        const pinkDonut = { color: 'pink', glazing: true };
+        await donutCombosCollection.updateOne({ name: 'B&W' }, {
             $push: {
                 donuts: {
                     $each: [whiteDonut, pinkDonut]
@@ -94,7 +94,7 @@ describe('push operator', () => {
             }
         });
 
-        const modifiedDonutCombo = await donutCombosCollection.findOne({ name: "B&W" });
+        const modifiedDonutCombo = await donutCombosCollection.findOne({ name: 'B&W' });
 
         expect(modifiedDonutCombo.donuts.length).toBe(4);
         expect(modifiedDonutCombo.donuts[2]).toStrictEqual(whiteDonut);
