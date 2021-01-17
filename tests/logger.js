@@ -4,7 +4,7 @@ const chalk = require('chalk');
 module.exports.printDifference = (testName, initial, modified) => {
     const diffOptions = {
         aAnnotation: 'Original',
-        aColor: chalk.cyanBright,
+        aColor: chalk.redBright,
         bAnnotation: 'Modified',
         bColor: chalk.greenBright,
         commonColor: chalk.cyanBright
