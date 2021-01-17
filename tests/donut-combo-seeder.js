@@ -29,7 +29,7 @@ const donutCombosSeed = [{
 },
 {
     name: 'No Choco',
-    active: true,
+    active: false,
     donuts: [
         { color: 'blue', glazing: true },
         { color: 'pink', glazing: true },
