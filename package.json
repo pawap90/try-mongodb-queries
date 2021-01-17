@@ -1,0 +1,33 @@
+{
+  "name": "try-mongodb-queries",
+  "version": "1.0.0",
+  "description": "A sample project to try mongodb queries in memory using jest",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --runInBand ./test --verbose "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawap90/try-mongodb-queries.git"
+  },
+  "keywords": [
+    "mongodb",
+    "test",
+    "jest"
+  ],
+  "author": "Paula Santamaría",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pawap90/try-mongodb-queries/issues"
+  },
+  "homepage": "https://github.com/pawap90/try-mongodb-queries#readme",
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "jest": "^26.6.3",
+    "jest-diff": "^26.6.2",
+    "mongodb-memory-server-core": "^6.9.3"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  }
+}
