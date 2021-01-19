@@ -1,5 +1,8 @@
 # try-mongodb-queries
-A simple project to try MongoDB queries in memory using Jest
+A simple project to try MongoDB queries in memory using Jest. 
+Includes a logger that logs the difference between the original test data and the data after the update using diff syntax highlight:
+
+![The difference of a MongoDB document after being updated](https://i.imgur.com/8yGmVkY.png)
 
 # Dependencies
 What you need to run this project:
