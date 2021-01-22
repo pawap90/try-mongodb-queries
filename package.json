@@ -4,7 +4,8 @@
   "description": "A sample project to try mongodb queries in memory using jest",
   "main": "app.js",
   "scripts": {
-    "test": "jest --runInBand ./test --verbose "
+    "test": "jest --runInBand ./test --verbose ",
+    "test-filter": "jest -t"
   },
   "repository": {
     "type": "git",
