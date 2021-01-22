@@ -31,13 +31,13 @@ afterAll(async () => {
 describe('push operator', () => {
 
     it('db can be seeded', async () => {
-        await seeder.run(db);
+        await seeder.runMix1(db);
 
         expect(await donutCombosCollection.countDocuments({})).toBe(3);
     });
 
     it('can push a single donut to the end of the array', async () => {
-        await seeder.run(db);
+        await seeder.runMix1(db);
 
         const initialDonutCombo = await donutCombosCollection.findOne({ name: 'No Choco' });
 
@@ -57,7 +57,7 @@ describe('push operator', () => {
     });
 
     it('can push a single donut into a specific position', async () => {
-        await seeder.run(db);
+        await seeder.runMix1(db);
 
         const initialDonutCombo = await donutCombosCollection.findOne({ name: 'No Choco' });
 
@@ -80,7 +80,7 @@ describe('push operator', () => {
     });
 
     it('can push multiple donuts', async () => {
-        await seeder.run(db);
+        await seeder.runMix1(db);
 
         const initialDonutCombo = await donutCombosCollection.findOne({ name: 'B&W' });
 

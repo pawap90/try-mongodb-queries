@@ -31,13 +31,13 @@ afterAll(async () => {
 describe('pull operator', () => {
 
     it('db can be seeded', async () => {
-        await seeder.run(db);
+        await seeder.runMix1(db);
 
         expect(await donutCombosCollection.countDocuments({})).toBe(3);
     });
 
     it('can pull a filtered set of donuts from the array', async () => {
-        await seeder.run(db);
+        await seeder.runMix1(db);
 
         const initialDonutCombos = await donutCombosCollection.find({ active: true }).toArray();
 
